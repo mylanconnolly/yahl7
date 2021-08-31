@@ -17,6 +17,10 @@ module YAHL7
                     .map { |s| Segment.parse(s, parse_options) }
       end
 
+      def to_s
+        @to_s ||= segments.join(parse_options.segment_sep)
+      end
+
       def [](index)
         case index
         when Integer then segments[index]

@@ -33,7 +33,17 @@ This should ensure that the code is reasonably cross-platform.
 
 ## Installation
 
-**TODO**
+Install the gem globally:
+
+```bash
+gem install 'yahl7'
+```
+
+Or add the following to your Gemfile:
+
+```ruby
+gem 'yahl7'
+```
 
 ## Usage
 
