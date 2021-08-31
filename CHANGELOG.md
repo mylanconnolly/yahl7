@@ -18,8 +18,12 @@ convenient fashion.
 - HL7 data types:
   - `CNN` for composite ID number and name fields
   - `DT` for dates
+  - `FT` for formatted text
+  - `NDL` for name, date, and location
   - `TS` for timestamps
+  - `XAD` for extended addresses
   - `XPN` for extended person names
+  - `XTN` for extended telephone numbers
 
 ### Changed
 
@@ -27,6 +31,7 @@ convenient fashion.
   unknown format rather than the default `RuntimeError`.
 - Rename `YAHL7::V2::SegmentFieldNames` to `YAHL7::V2::AliasFieldNames` because
   it is useful in custom data types as well as segments.
+- Map created HL7 data types to applicable fields in segments.
 
 ## [0.2.0] - 2021-08-31
 

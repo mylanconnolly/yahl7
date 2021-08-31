@@ -4,9 +4,9 @@ require 'date'
 
 module YAHL7
   module V2
-    module DataType
+    class DataType
       # This is the HL7 data type for a composite name and ID number.
-      class CNN
+      class CNN < YAHL7::V2::DataType
         include YAHL7::V2::AliasPersonName
         include YAHL7::V2::AliasFieldNames
 
@@ -23,10 +23,6 @@ module YAHL7
                              assigning_authority_universal_id: 9,
                              assigning_authority_universal_id_type: 10
                            })
-
-        def initialize(value)
-          @value = value
-        end
       end
     end
   end

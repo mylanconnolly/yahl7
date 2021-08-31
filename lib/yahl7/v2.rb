@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
+Dir[File.join(__dir__, 'v2', 'error', '*.rb')].sort.each { |f| require f }
+
 require_relative 'v2/alias_field_names'
 require_relative 'v2/alias_person_name'
+require_relative 'v2/data_type'
 require_relative 'v2/date_time'
 require_relative 'v2/formatter'
-
-Dir[File.join(__dir__, 'v2', 'error', '*.rb')].sort.each { |f| require f }
-Dir[File.join(__dir__, 'v2', 'data_type', '*.rb')].sort.each { |f| require f }
 
 require_relative 'v2/parser'
 

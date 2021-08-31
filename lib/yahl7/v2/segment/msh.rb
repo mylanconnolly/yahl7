@@ -13,7 +13,7 @@ module YAHL7
                              sending_facility: 4,
                              receiving_application: 5,
                              receiving_facility: 6,
-                             message_datetime: 7,
+                             message_datetime: { index: 7, class: YAHL7::V2::DataType::TS },
                              security: 8,
                              message_type: 9,
                              message_control_id: 10,

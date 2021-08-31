@@ -25,8 +25,15 @@ module YAHL7
       # This is the module that actually extends the segment.
       module ClassMethods
         def define_field_names(mappings)
-          mappings.each do |name, index|
-            define_method(name) { self[index] }
+          mappings.each do |name, mapping|
+            case mapping
+            when Integer then define_method(name) { self[mapping] }
+            when Hash
+              define_method(name) do
+                value = self[mapping[:index]]
+                value.nil? || value == '' ? nil : mapping[:class].new(value)
+              end
+            end
           end
         end
       end

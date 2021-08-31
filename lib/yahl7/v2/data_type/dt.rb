@@ -4,14 +4,10 @@ require 'date'
 
 module YAHL7
   module V2
-    module DataType
+    class DataType
       # This is the HL7 data type for a single date. This should be in the
       # format of YYYY[MM[DD]]
-      class DT
-        def initialize(value)
-          @value = value
-        end
-
+      class DT < YAHL7::V2::DataType
         def date
           @date ||= parse_date
         end

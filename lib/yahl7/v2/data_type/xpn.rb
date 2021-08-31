@@ -4,10 +4,10 @@ require 'date'
 
 module YAHL7
   module V2
-    module DataType
+    class DataType
       # This is the HL7 data type for an extended person name. This is the data
       # type used for patient names, etc.
-      class XPN
+      class XPN < YAHL7::V2::DataType
         include YAHL7::V2::AliasPersonName
         include YAHL7::V2::AliasFieldNames
 
@@ -27,14 +27,6 @@ module YAHL7
                              expiration_date: 12,
                              professional_suffix: 13
                            })
-
-        def initialize(value)
-          @value = value
-        end
-
-        def [](index)
-          @value[index]
-        end
 
         def full_name
           case name_assembly_order&.downcase

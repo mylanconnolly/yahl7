@@ -9,7 +9,7 @@ module YAHL7
         define_field_names({
                              set_id: 1,
                              source_of_comment: 2,
-                             comment: 3,
+                             comment: { index: 3, class: YAHL7::V2::DataType::FT },
                              comment_type: 4
                            })
       end

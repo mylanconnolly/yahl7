@@ -4,14 +4,10 @@ require 'date'
 
 module YAHL7
   module V2
-    module DataType
+    class DataType
       # This is the HL7 data type for a timestamp with a format of
       # YYYY[MM[DD[HH[MM[SS[.S[S[S[S]]]]]]]]][+/-ZZZZ]
-      class TS
-        def initialize(value)
-          @value = value
-        end
-
+      class TS < YAHL7::V2::DataType
         def timestamp
           @timestamp ||= parse_timestamp
         end
