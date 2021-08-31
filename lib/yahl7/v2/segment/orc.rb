@@ -3,6 +3,7 @@
 module YAHL7
   module V2
     class Segment
+      # ORC segments contain information common to all orders.
       class ORC < YAHL7::V2::Segment
         include YAHL7::V2::AliasFieldNames
 

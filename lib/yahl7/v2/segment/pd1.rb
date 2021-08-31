@@ -3,6 +3,7 @@
 module YAHL7
   module V2
     class Segment
+      # PD1 segments contain additional patient demographic information.
       class PD1 < YAHL7::V2::Segment
         include YAHL7::V2::AliasFieldNames
 

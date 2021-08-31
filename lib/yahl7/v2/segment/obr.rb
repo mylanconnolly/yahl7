@@ -3,6 +3,7 @@
 module YAHL7
   module V2
     class Segment
+      # OBR segments contain observation request information about a patient.
       class OBR < YAHL7::V2::Segment
         include YAHL7::V2::AliasFieldNames
 

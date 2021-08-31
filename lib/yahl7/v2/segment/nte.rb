@@ -3,6 +3,7 @@
 module YAHL7
   module V2
     class Segment
+      # NTE segments contain notes and comments.
       class NTE < YAHL7::V2::Segment
         include YAHL7::V2::AliasFieldNames
 

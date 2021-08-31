@@ -3,6 +3,7 @@
 module YAHL7
   module V2
     class Segment
+      # PID segments contain standard patient demographic information.
       class PID < YAHL7::V2::Segment
         include YAHL7::V2::AliasFieldNames
 

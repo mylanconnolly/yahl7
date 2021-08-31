@@ -3,6 +3,7 @@
 module YAHL7
   module V2
     class Segment
+      # IN1 segments contain patient insurance coverage information.
       class IN1 < YAHL7::V2::Segment
         include YAHL7::V2::AliasFieldNames
 

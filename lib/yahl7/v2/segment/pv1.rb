@@ -3,6 +3,7 @@
 module YAHL7
   module V2
     class Segment
+      # PV1 segments contain information about the patient visit.
       class PV1 < YAHL7::V2::Segment
         include YAHL7::V2::AliasFieldNames
 

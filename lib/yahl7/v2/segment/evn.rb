@@ -3,6 +3,8 @@
 module YAHL7
   module V2
     class Segment
+      # EVN segments are used to communicate necessary trigger information to
+      # receiving applications.
       class EVN < YAHL7::V2::Segment
         include YAHL7::V2::AliasFieldNames
 

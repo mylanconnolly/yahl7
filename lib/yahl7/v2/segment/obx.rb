@@ -3,6 +3,7 @@
 module YAHL7
   module V2
     class Segment
+      # OBX segments contain observation result information.
       class OBX < YAHL7::V2::Segment
         include YAHL7::V2::AliasFieldNames
 

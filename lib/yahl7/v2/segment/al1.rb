@@ -3,6 +3,7 @@
 module YAHL7
   module V2
     class Segment
+      # AL1 segments contain patient allergy information.
       class AL1 < YAHL7::V2::Segment
         include YAHL7::V2::AliasFieldNames
 

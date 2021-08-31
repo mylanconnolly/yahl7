@@ -3,6 +3,8 @@
 module YAHL7
   module V2
     class Segment
+      # MSH segments contain the intent, source, and destination of the HL7
+      # message.
       class MSH < YAHL7::V2::Segment
         include YAHL7::V2::AliasFieldNames
 

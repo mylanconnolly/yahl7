@@ -3,6 +3,7 @@
 module YAHL7
   module V2
     class Segment
+      # DG1 segments contain patient diagnosis information.
       class DG1 < YAHL7::V2::Segment
         include YAHL7::V2::AliasFieldNames
 
