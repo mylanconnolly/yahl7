@@ -3,6 +3,11 @@
 [![Ruby](https://github.com/mylanconnolly/yahl7/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/mylanconnolly/yahl7/actions/workflows/main.yml)
 [![Gem Version](https://badge.fury.io/rb/yahl7.svg)](https://badge.fury.io/rb/yahl7)
 
+> **NOTE** Until this gem reaches version 1.0, you should consider the API to be
+> unstable and minor or major changes may occur with any release. Once version
+> 1.0 has been released, the API will be stable for all 1.x release in keeping
+> with [Semantic Versioning](https://semver.org/).
+
 This gem is used to parse HL7 data from strings or IO sources in Ruby. We
 currently support any version of HL7 >= 2 and < 3 (which came with a change to
 XML).

@@ -15,6 +15,10 @@ convenient fashion.
 
 - `YAHL7::V2::Error::InvalidFormatError` error class for when invalid input was
   encountered during parsing.
+- HL7 segments:
+  - `AL1` for patient allergy information
+  - `DG1` for patient diagnosis information
+  - `EVN` to describe event triggers
 - HL7 data types:
   - `CNN` for composite ID number and name fields
   - `DT` for dates
