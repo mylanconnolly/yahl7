@@ -3,7 +3,7 @@
 require 'date'
 
 RSpec.describe YAHL7::V2::DateTime do
-  describe '#parse' do
+  describe '::parse' do
     subject { described_class.parse(input) }
 
     [
@@ -18,6 +18,13 @@ RSpec.describe YAHL7::V2::DateTime do
       context "when given '#{value}'" do
         let(:input) { value }
         it { is_expected.to eq(want) }
+      end
+    end
+
+    %w[201 20120 2012050].each do |value|
+      context "when given invalid date format '#{value}'" do
+        let(:input) { value }
+        it { expect { subject }.to raise_error(YAHL7::V2::Error::InvalidFormatError) }
       end
     end
   end

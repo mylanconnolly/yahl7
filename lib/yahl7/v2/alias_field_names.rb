@@ -2,13 +2,13 @@
 
 module YAHL7
   module V2
-    # This module can be included into a segment class to make the
-    # `define_field_names` macro available. This macro allows you to define
-    # repetitive field name aliases in a quick and easy fashion.
+    # This module can be included into a class to make the `define_field_names`
+    # macro available. This macro allows you to define repetitive field name
+    # aliases in a quick and easy fashion.
     #
     # For example:
     #
-    #     include YAHL7::V2::SegmentFieldNames
+    #     include YAHL7::V2::AliasFieldNames
     #
     #      define_field_names({ patient_identifier_list: 3 })
     #
@@ -17,7 +17,7 @@ module YAHL7
     #
     # If you want to define more complex methods, you can exclude them from this
     # hash and define them manually.
-    module SegmentFieldNames
+    module AliasFieldNames
       def self.included(base)
         base.extend(ClassMethods)
       end

@@ -21,7 +21,7 @@ module YAHL7
         timezone = parts[1]
 
         format = timestamp_format(timestamp)
-        raise 'Unknown timestamp format' if format.nil?
+        raise YAHL7::V2::Error::InvalidFormatError, 'Unknown timestamp format' if format.nil?
 
         format += '%z' unless timezone.nil?
         ::DateTime.strptime(value, format)
