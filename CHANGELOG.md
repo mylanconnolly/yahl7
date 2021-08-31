@@ -18,6 +18,7 @@ convenient fashion.
 - HL7 data types:
   - `CNN` for composite ID number and name fields
   - `DT` for dates
+  - `TS` for timestamps
   - `XPN` for extended person names
 
 ### Changed
