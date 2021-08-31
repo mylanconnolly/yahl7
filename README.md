@@ -1,6 +1,7 @@
 # YAHL7 (yet another HL7 client)
 
 [![Ruby](https://github.com/mylanconnolly/yahl7/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/mylanconnolly/yahl7/actions/workflows/main.yml)
+[![Gem Version](https://badge.fury.io/rb/yahl7.svg)](https://badge.fury.io/rb/yahl7)
 
 This gem is used to parse HL7 data from strings or IO sources in Ruby. We
 currently support any version of HL7 >= 2 and < 3 (which came with a change to
