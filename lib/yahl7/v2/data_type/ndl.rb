@@ -25,6 +25,18 @@ module YAHL7
                              floor: 10
                            })
 
+        def initialize(value)
+          @value = if value.nil?
+                     []
+                   elsif value.is_a?(String)
+                     [value]
+                   elsif value[1].is_a?(String)
+                     [value]
+                   else
+                     value
+                   end
+        end
+
         def full_name
           name&.full_name
         end

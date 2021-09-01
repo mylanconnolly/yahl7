@@ -39,6 +39,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Messages now display body correctly.
+- The `NDL` data type did not play well with some implementations that do not
+  include all field values.
 
 ## [0.4.0] - 2021-09-01
 
