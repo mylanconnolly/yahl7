@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Fixed
+
+- A bug that could be encountered where messages that do not contain a message
+  type field caused a crash. This crash should now be fixed. When calling
+  `YAHL7::V2::Message.message_type` on a message body that does not contain the
+  type field, `nil` should now be returned rather than crashing.
+
 ## [0.3.0] - 2021-08-31
 
 The most significant part of this release is the addition of HL7 data types,

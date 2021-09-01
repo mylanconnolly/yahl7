@@ -45,9 +45,15 @@ module YAHL7
       # information, as this method simply finds the type code and then hands it
       # off to `get_message_class` to find the class to use.
       def self.message_type(body, parse_options = nil)
+        return nil if body.length < 8
+
         parse_options ||= ParseOptions.from_body(body)
         head = body.split(parse_options.segment_sep)[0]
+        return nil if head.nil?
+
         type = head.split(parse_options.repetition_sep)[8]
+        return nil if type.nil?
+
         code = type.split(parse_options.component_sep)[0]
         get_message_class(code)
       end

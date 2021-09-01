@@ -49,6 +49,11 @@ RSpec.describe YAHL7::V2::Message do
       expect(described_class.message_type(msg.gsub('__TYPE__', 'FOO'))).to eq(described_class)
       expect(described_class.message_type(msg.gsub('__TYPE__', 'ZZZ'))).to eq(described_class)
     end
+
+    it 'gracefully handles implausible data' do
+      expect(described_class.message_type('')).to eq(nil)
+      expect(described_class.message_type('MSH|^~\&|MegaReg|XYZHospC|SuperOE|XYZImgCtr|20060529090131-0500||')).to eq(nil)
+    end
   end
 
   describe '::get_message_class' do
