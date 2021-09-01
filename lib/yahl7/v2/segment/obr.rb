@@ -34,7 +34,7 @@ module YAHL7
                              diagnostic_service_section_id: 24,
                              result_status: 25,
                              parent_result: 26,
-                             quantity_timing: 27,
+                             quantity_timing: { index: 27, class: YAHL7::V2::DataType::TQ },
                              result_copies_to: 28,
                              parent: 29,
                              transportation_mode: 30,

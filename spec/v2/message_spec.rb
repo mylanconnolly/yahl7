@@ -52,7 +52,7 @@ RSpec.describe YAHL7::V2::Message do
 
     it 'gracefully handles implausible data' do
       expect(described_class.message_type('')).to eq(described_class)
-      expect(described_class.message_type('MSH|^~\&|MegaReg|XYZHospC|SuperOE|XYZImgCtr|20060529090131-0500||')).to eq(described_class)
+      expect(described_class.message_type('MSH|^~\&|MegaReg|XYZHospC|SuperOE|XYZImgCtr|')).to eq(described_class)
     end
   end
 

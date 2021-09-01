@@ -14,7 +14,7 @@ module YAHL7
                              placer_group_number: 4,
                              order_status: 5,
                              response_flag: 6,
-                             quantity_timing: 7,
+                             quantity_timing: { index: 7, class: YAHL7::V2::DataType::TQ },
                              parent_order: 8,
                              transaction_datetime: 9,
                              entered_by: 10,
