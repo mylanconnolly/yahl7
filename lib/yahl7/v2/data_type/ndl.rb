@@ -24,6 +24,10 @@ module YAHL7
                              building: 9,
                              floor: 10
                            })
+
+        def full_name
+          name&.full_name
+        end
       end
     end
   end
