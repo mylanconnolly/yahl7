@@ -5,6 +5,34 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+
+- HL7 data types:
+  - `XCN` for extended composite names
+
+### Changed
+
+- Mapped the following fields to the `XCN` data type:
+  - `DG1.16`
+  - `EVN.5`
+  - `IN1.30`
+  - `OBR.10`
+  - `OBR.16`
+  - `OBR.28`
+  - `OBX.16`
+  - `ORC.10`
+  - `ORC.11`
+  - `ORC.12`
+  - `ORC.19`
+  - `PD1.4`
+  - `PV1.7`
+  - `PV1.8`
+  - `PV1.9`
+  - `PV1.17`
+  - `PV1.52`
+
 ## [0.4.0] - 2021-09-01
 
 ### Added

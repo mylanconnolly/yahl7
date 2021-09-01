@@ -11,7 +11,7 @@ module YAHL7
                              living_dependency: 1,
                              living_arrangement: 2,
                              patient_primary_facility: 3,
-                             patient_primary_care_provider: 4,
+                             patient_primary_care_provider: { index: 4, class: YAHL7::V2::DataType::XCN },
                              student_indicator: 5,
                              handicap: 6,
                              living_will_code: 7,

@@ -23,7 +23,7 @@ module YAHL7
                              outlier_cost: 13,
                              grouper_version_and_type: 14,
                              diagnostic_priority: 15,
-                             diagnosing_clinician: 16,
+                             diagnosing_clinician: { index: 16, class: YAHL7::V2::DataType::XCN },
                              diagnosis_classification: 17,
                              confidential_indicator: 18,
                              attestation_datetime: { index: 19, class: YAHL7::V2::DataType::TS },

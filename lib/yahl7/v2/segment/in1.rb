@@ -37,7 +37,7 @@ module YAHL7
                              release_information_code: 27,
                              preadmit_certification: 28,
                              verification_datetime: 29,
-                             verification_by: 30,
+                             verification_by: { index: 30, class: YAHL7::V2::DataType::XCN },
                              type_of_agreement_code: 31,
                              billing_status: 32,
                              lifetime_reserve_days: 33,

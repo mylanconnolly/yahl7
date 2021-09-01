@@ -14,9 +14,9 @@ module YAHL7
                              admission_type: 4,
                              preadmit_number: 5,
                              prior_patient_location: 6,
-                             attending_doctor: 7,
-                             referring_doctor: 8,
-                             consulting_doctor: 9,
+                             attending_doctor: { index: 7, class: YAHL7::V2::DataType::XCN },
+                             referring_doctor: { index: 8, class: YAHL7::V2::DataType::XCN },
+                             consulting_doctor: { index: 9, class: YAHL7::V2::DataType::XCN },
                              hospital_service: 10,
                              temporary_location: 11,
                              preadmit_test_indicator: 12,
@@ -24,7 +24,7 @@ module YAHL7
                              admit_source: 14,
                              ambulatory_status: 15,
                              vip_indicator: 16,
-                             admitting_doctor: 17,
+                             admitting_doctor: { index: 17, class: YAHL7::V2::DataType::XCN },
                              patient_type: 18,
                              visit_number: 19,
                              financial_class: 20,
@@ -59,7 +59,7 @@ module YAHL7
                              total_payouts: 49,
                              alternate_visit_id: 50,
                              visit_indicator: 51,
-                             other_healthcare_provider: 52
+                             other_healthcare_provider: { index: 52, class: YAHL7::V2::DataType::XCN }
                            })
       end
     end

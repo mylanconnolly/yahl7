@@ -24,7 +24,7 @@ module YAHL7
                              user_defined_access_checks: 13,
                              observation_datetime: { index: 14, class: YAHL7::V2::DataType::TS },
                              producer_id: 15,
-                             responsible_observer: 16,
+                             responsible_observer: { index: 16, class: YAHL7::V2::DataType::XCN },
                              observation_method: 17,
                              equipment_instance_identifier: 18,
                              analysis_datetime: { index: 19, class: YAHL7::V2::DataType::TS }

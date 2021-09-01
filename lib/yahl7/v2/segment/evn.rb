@@ -13,7 +13,7 @@ module YAHL7
                              recorded_datetime: { index: 2, class: YAHL7::V2::DataType::TS },
                              planned_event_datetime: { index: 3, class: YAHL7::V2::DataType::TS },
                              event_reason_code: 4,
-                             operator_id: 5,
+                             operator_id: { index: 5, class: YAHL7::V2::DataType::XCN },
                              event_occurred: { index: 6, class: YAHL7::V2::DataType::TS },
                              event_facility: 7
                            })
