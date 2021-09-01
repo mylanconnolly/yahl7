@@ -36,6 +36,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `PV1.17`
   - `PV1.52`
 
+### Fixed
+
+- Messages now display body correctly.
+
 ## [0.4.0] - 2021-09-01
 
 ### Added

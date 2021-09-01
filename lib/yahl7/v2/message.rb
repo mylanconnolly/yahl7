@@ -18,7 +18,7 @@ module YAHL7
       end
 
       def to_s
-        @to_s ||= segments.join(parse_options.segment_sep)
+        @to_s ||= segments.map(&:to_s).join(parse_options.segment_sep)
       end
 
       def [](index)
