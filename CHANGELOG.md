@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.2] - 2021-09-01
+
+0.3.1 introduced a bug that is fixed in this release.
+
+### Fixed
+
+- A bug in 0.3.1. We should have returned `YAHL7::V2::Message` but `nil` was
+  returned instead, resulting in an inconsistent API. This release fixed that
+  behavior and makes the API consistent again.
+
 ## [0.3.1] - 2021-09-01
 
 This release fixes a bug under certain circumstances. More details are listed
