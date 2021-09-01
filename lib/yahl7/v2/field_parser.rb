@@ -19,13 +19,8 @@ module YAHL7
       private
 
       def split_fields(body)
-        fields = split_body(body, parse_options.field_sep)
-
-        if fields.is_a?(String)
-          split_components(fields)
-        else
-          fields.map { |f| split_components(f) }
-        end
+        parts = split_body(body, parse_options.field_sep)
+        parts.is_a?(Array) ? parts.map { |f| split_components(f) } : split_components(parts)
       end
 
       def split_components(body)
@@ -43,6 +38,8 @@ module YAHL7
       end
 
       def split_body(body, separator)
+        return '' if body.nil?
+
         got = body.split(separator)
         got.count < 2 ? body : got
       end
