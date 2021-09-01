@@ -16,14 +16,19 @@ module YAHL7
     # Subsequent data access will be cached, however, so the performance hit of
     # subsequent calls should be negligable.
     class Segment
-      attr_accessor :parts, :field_parser
+      attr_accessor :body, :parts, :field_parser
 
       def initialize(body, parse_options)
-        @parts = body.split(parse_options.repetition_sep)
+        @body = body
+        @parts = @body.split(parse_options.repetition_sep)
         @parsed = Array.new(@parts.count)
         @field_parser = FieldParser.new(parse_options)
 
         return unless defined?(FIELD_MAPPING)
+      end
+
+      def to_s
+        @body
       end
 
       # This method allows users to use an index to get a field out of a segment
