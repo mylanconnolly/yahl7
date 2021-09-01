@@ -23,6 +23,10 @@ module YAHL7
                              assigning_authority_universal_id: 9,
                              assigning_authority_universal_id_type: 10
                            })
+
+        def full_name
+          assemble_name_given_first
+        end
       end
     end
   end

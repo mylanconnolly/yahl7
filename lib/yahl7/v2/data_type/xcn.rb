@@ -33,6 +33,13 @@ module YAHL7
                              assigning_jurisdiction: 22,
                              assigning_agency_or_department: 23
                            })
+
+        def full_name
+          case name_assembly_order&.downcase
+          when 'f' then assemble_name_family_first
+          else assemble_name_given_first
+          end
+        end
       end
     end
   end
