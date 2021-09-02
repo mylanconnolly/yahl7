@@ -49,20 +49,25 @@ module YAHL7
           mappings.each do |name, mapping|
             case mapping
             when Integer then define_method(name) { self[mapping] }
-            when Hash
-              define_method(name) do
-                klass = mapping[:class]
-                value = self[mapping[:index]]
-
-                if value.nil? || value == ''
-                  nil
-                elsif klass.respond_to?(:repeated?) && klass.repeated?(value)
-                  value.map { |v| klass.new(v) }
-                else
-                  klass.new(value)
-                end
-              end
+            when Hash then define_method(name) { make_field(mapping[:class], self[mapping[:index]]) }
             end
+          end
+        end
+
+        def make_field(klass, value)
+          return nil if value.nil? || value == ''
+
+          if klass.respond_to?(:repeated?) && klass.repeated?(value)
+            value.map { |v| klass.new(v) }
+          else
+            klass.new(value)
+          end
+        end
+
+        def new_class_value(klass, value)
+          case klass
+          when YAHL7::V2::DataType::FT then klass.new(value, parse_options)
+          else klass.new
           end
         end
       end

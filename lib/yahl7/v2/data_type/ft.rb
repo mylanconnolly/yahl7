@@ -7,6 +7,11 @@ module YAHL7
     class DataType
       # This is the HL7 data type for formatted text
       class FT < YAHL7::V2::DataType
+        def initialize(value, parse_options)
+          @value = value
+          @formatter = YAHL7::V2::Formatter.new(parse_options)
+        end
+
         def formatted
           @formatted ||= parse_value
         end
@@ -18,7 +23,7 @@ module YAHL7
         end
 
         def parse_body(body)
-          YAHL7::V2::Formatter.format(body)
+          @formatter.format(body)
         end
       end
     end

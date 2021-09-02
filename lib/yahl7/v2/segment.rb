@@ -16,13 +16,14 @@ module YAHL7
     # Subsequent data access will be cached, however, so the performance hit of
     # subsequent calls should be negligable.
     class Segment
-      attr_accessor :body, :parts, :field_parser
+      attr_accessor :body, :parts, :field_parser, :parse_options
 
       def initialize(body, parse_options)
         @body = body
         @parts = @body.split(parse_options.repetition_sep)
         @parsed = Array.new(@parts.count)
         @field_parser = FieldParser.new(parse_options)
+        @parse_options = parse_options
 
         return unless defined?(FIELD_MAPPING)
       end
