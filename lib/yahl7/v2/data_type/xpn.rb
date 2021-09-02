@@ -28,6 +28,10 @@ module YAHL7
                              professional_suffix: 13
                            })
 
+        def self.repeated?(value)
+          !value.nil? && value[0].is_a?(Array)
+        end
+
         def full_name
           case name_assembly_order&.downcase
           when 'f' then assemble_name_family_first
