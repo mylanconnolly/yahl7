@@ -56,12 +56,10 @@ module YAHL7
 
                 if value.nil? || value == ''
                   nil
+                elsif klass.respond_to?(:repeated?) && klass.repeated?(value)
+                  value.map { |v| klass.new(v) }
                 else
-                  if klass.respond_to?(:repeated?) && klass.repeated?(value)
-                    value.map { |v| klass.new(v) }
-                  else
-                    klass.new(value)
-                  end
+                  klass.new(value)
                 end
               end
             end

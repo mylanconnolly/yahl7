@@ -5,7 +5,7 @@ module YAHL7
     class Message
       # ORU messages contain unsolicited observation results about a patient.
       class ORU < YAHL7::V2::Message
-        OBSERVATION_AND_NOTE_TYPES = %w[NTE OBX]
+        OBSERVATION_AND_NOTE_TYPES = %w[NTE OBX].freeze
 
         # This method is used to return all NTE and OBX segments in their
         # original order. This can be useful for building a report of test

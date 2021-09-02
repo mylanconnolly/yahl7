@@ -28,9 +28,7 @@ module YAHL7
         def initialize(value)
           @value = if value.nil?
                      []
-                   elsif value.is_a?(String)
-                     [value]
-                   elsif value[0].is_a?(String)
+                   elsif value.is_a?(String) || value[0].is_a?(String)
                      [value]
                    else
                      value

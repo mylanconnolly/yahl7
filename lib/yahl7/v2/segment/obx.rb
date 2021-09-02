@@ -12,7 +12,7 @@ module YAHL7
                              value_type: 2,
                              observation_identifier: 3,
                              observation_sub_id: 4,
-                             observation_value: { index: 5, YAHL7::V2::DataType::FT }
+                             observation_value: { index: 5, class: YAHL7::V2::DataType::FT },
                              units: 6,
                              reference_range: 7,
                              abnormal_flags: 8,
