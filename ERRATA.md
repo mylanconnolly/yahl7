@@ -14,3 +14,4 @@ Cannot handle character escape sequence              | Initial               | N
 Cannot handle multi-byte character escape sequence   | Initial               | N/A
 Cannot handle hexadecimal character escape sequence  | Initial               | N/A
 Cannot resolve timestamps to partial-second accuracy | Initial               | N/A
+Does not handle repeated fields in all cases         | Initial               | N/A

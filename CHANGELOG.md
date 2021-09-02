@@ -12,7 +12,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - HL7 data types:
   - `XCN` for extended composite names
 - The `CNN` data type now has a `#full_name` method to match `XPN` and `XCN`.
-- The `NDL` data type now has a `#full_name` method to match `XPN` and `XCN`.
+- The `NDL` data type now has aliases to the name methods in order to match the
+  API of other name elements.
 - The segment type now overrides `#to_s`
 
 ### Changed

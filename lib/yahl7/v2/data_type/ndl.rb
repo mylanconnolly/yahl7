@@ -40,6 +40,14 @@ module YAHL7
         def full_name
           name&.full_name
         end
+
+        def bare_name_given_first
+          name&.bare_name_given_first
+        end
+
+        def bare_name_family_first
+          name&.bare_name_family_first
+        end
       end
     end
   end
