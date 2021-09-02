@@ -42,6 +42,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Messages now display body correctly.
 - The `NDL` data type did not play well with some implementations that do not
   include all field values.
+- The `#suffixes` method in `YAHL7::V2::AliasPersonName` now deduplicates the
+  suffix entries (i.e., degree and suffix) so that names appear more natural if
+  the generating system uses the same item in both degree and suffix.
 
 ## [0.4.0] - 2021-09-01
 

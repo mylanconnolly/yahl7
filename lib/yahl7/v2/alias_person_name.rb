@@ -46,6 +46,8 @@ module YAHL7
       def suffixes
         [suffix, degree]
           .reject { |p| p.nil? || p == '' }
+          .map(&:strip)
+          .uniq
           .join(', ')
       end
 
