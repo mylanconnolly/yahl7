@@ -25,6 +25,10 @@ module YAHL7
                              effective_date: { index: 12, class: YAHL7::V2::DataType::TS },
                              expiration_date: { index: 13, class: YAHL7::V2::DataType::TS }
                            })
+
+        def self.repeated?(value)
+          !value.nil? && value[0].is_a?(Array)
+        end
       end
     end
   end
