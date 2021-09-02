@@ -30,7 +30,7 @@ module YAHL7
                      []
                    elsif value.is_a?(String)
                      [value]
-                   elsif value[1].is_a?(String)
+                   elsif value[0].is_a?(String)
                      [value]
                    else
                      value
@@ -39,6 +39,10 @@ module YAHL7
 
         def full_name
           name&.full_name
+        end
+
+        def self.repeated?(value)
+          !value.nil? && value[0].is_a?(Array) && value[0][0].is_a?(Array)
         end
       end
     end
