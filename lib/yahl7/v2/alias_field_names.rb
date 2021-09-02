@@ -22,6 +22,23 @@ module YAHL7
         base.extend(ClassMethods)
       end
 
+      def make_field(klass, value)
+        return nil if value.nil? || value == ''
+
+        if klass.respond_to?(:repeated?) && klass.repeated?(value)
+          value.map { |v| klass.new(v) }
+        else
+          klass.new(value)
+        end
+      end
+
+      def new_class_value(klass, value)
+        case klass
+        when YAHL7::V2::DataType::FT then klass.new(value, parse_options)
+        else klass.new
+        end
+      end
+
       # This is the module that actually extends the segment.
       module ClassMethods
         # This method is used to define the field name mappings for the data
@@ -51,23 +68,6 @@ module YAHL7
             when Integer then define_method(name) { self[mapping] }
             when Hash then define_method(name) { make_field(mapping[:class], self[mapping[:index]]) }
             end
-          end
-        end
-
-        def make_field(klass, value)
-          return nil if value.nil? || value == ''
-
-          if klass.respond_to?(:repeated?) && klass.repeated?(value)
-            value.map { |v| klass.new(v) }
-          else
-            klass.new(value)
-          end
-        end
-
-        def new_class_value(klass, value)
-          case klass
-          when YAHL7::V2::DataType::FT then klass.new(value, parse_options)
-          else klass.new
           end
         end
       end
