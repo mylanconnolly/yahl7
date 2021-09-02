@@ -40,6 +40,10 @@ module YAHL7
           else assemble_name_given_first
           end
         end
+
+        def self.repeated?(value)
+          !value.nil? && value[0].is_a?(Array)
+        end
       end
     end
   end
