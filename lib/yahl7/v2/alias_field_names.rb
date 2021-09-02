@@ -22,8 +22,13 @@ module YAHL7
         base.extend(ClassMethods)
       end
 
+      def normalize_value(value)
+        value.nil? || value == '' ? nil : value
+      end
+
       def make_field(klass, value)
-        return nil if value.nil? || value == ''
+        value = normalize_value(value)
+        return nil if value.nil?
 
         if klass.respond_to?(:repeated?) && klass.repeated?(value)
           value.map { |v| new_class_value(klass, v) }
@@ -33,8 +38,8 @@ module YAHL7
       end
 
       def new_class_value(klass, value)
-        case klass
-        when YAHL7::V2::DataType::FT then klass.new(value, parse_options)
+        case klass.name
+        when 'YAHL7::V2::DataType::FT' then klass.new(value, parse_options)
         else klass.new(value)
         end
       end
@@ -65,7 +70,7 @@ module YAHL7
         def define_field_names(mappings)
           mappings.each do |name, mapping|
             case mapping
-            when Integer then define_method(name) { self[mapping] }
+            when Integer then define_method(name) { normalize_value(self[mapping]) }
             when Hash then define_method(name) { make_field(mapping[:class], self[mapping[:index]]) }
             end
           end
