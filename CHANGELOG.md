@@ -23,6 +23,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Field values are now normalized so that empty values are returned as `nil`
+  whether they are strings or class instances.
 - Mapped the following fields to the `XCN` data type:
   - `DG1.16`
   - `EVN.5`
