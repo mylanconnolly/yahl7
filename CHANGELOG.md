@@ -15,6 +15,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - The `NDL` data type now has aliases to the name methods in order to match the
   API of other name elements.
 - The segment type now overrides `#to_s`
+- The `ORU` message type now has an `#observations_and_notes` method, which
+  returns all `OBX` and `NTE` segments in order for that message. This is useful
+  for building a complete report of test results for applicable messages.
 
 ### Changed
 
