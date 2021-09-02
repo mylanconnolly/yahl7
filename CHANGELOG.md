@@ -27,6 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   whether they are strings or class instances.
 - The `FT` data type can now handle repeated values.
 - The `XAD` data type can now handle repeated values.
+- The `XTN` data type can now handle repeated values.
 - Mapped the following fields to the `XCN` data type:
   - `DG1.16`
   - `EVN.5`

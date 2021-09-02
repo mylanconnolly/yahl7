@@ -23,6 +23,10 @@ module YAHL7
                              speed_dial_code: 10,
                              unformatted_telephone_number: 11
                            })
+
+        def self.repeated?(value)
+          !value.nil? && value[0].is_a?(Array)
+        end
       end
     end
   end
