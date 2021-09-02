@@ -16,6 +16,10 @@ module YAHL7
           @formatted ||= parse_value
         end
 
+        def self.repeated?(value)
+          value.is_a?(Array)
+        end
+
         private
 
         def parse_value
