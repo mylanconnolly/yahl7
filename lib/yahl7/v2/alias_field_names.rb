@@ -26,9 +26,9 @@ module YAHL7
         return nil if value.nil? || value == ''
 
         if klass.respond_to?(:repeated?) && klass.repeated?(value)
-          value.map { |v| klass.new(v) }
+          value.map { |v| new_class_value(klass, v) }
         else
-          klass.new(value)
+          new_class_value(klass, value)
         end
       end
 
