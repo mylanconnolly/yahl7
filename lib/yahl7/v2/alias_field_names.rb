@@ -35,7 +35,7 @@ module YAHL7
       def new_class_value(klass, value)
         case klass
         when YAHL7::V2::DataType::FT then klass.new(value, parse_options)
-        else klass.new
+        else klass.new(value)
         end
       end
 
