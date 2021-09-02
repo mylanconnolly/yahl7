@@ -22,16 +22,18 @@ module YAHL7
                              assigning_authority: 8,
                              name_type_code: 9,
                              identifier_check_digit: 10,
-                             assigning_facility: 11,
-                             name_representation_code: 12,
-                             name_context: 16,
-                             name_validity_range: 17,
-                             name_assembly_order: 18,
-                             effective_date: 19,
-                             expiration_date: 20,
-                             professional_suffix: 21,
-                             assigning_jurisdiction: 22,
-                             assigning_agency_or_department: 23
+                             check_digit_scheme: 11,
+                             identifier_type_code: 12,
+                             assigning_facility: 13,
+                             name_representation_code: 14,
+                             name_context: 15,
+                             name_validity_range: 16,
+                             name_assembly_order: 17,
+                             effective_date: 18,
+                             expiration_date: { index: 19, class: YAHL7::V2::DataType::TS },
+                             professional_suffix: { index: 20, class: YAHL7::V2::DataType::TS },
+                             assigning_jurisdiction: 21,
+                             assigning_agency_or_department: 22
                            })
 
         def full_name
