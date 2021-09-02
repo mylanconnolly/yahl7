@@ -12,8 +12,7 @@ module YAHL7
                              value_type: 2,
                              observation_identifier: 3,
                              observation_sub_id: 4,
-                             # Skip observation_value; the logic here is
-                             # somewhat complex
+                             observation_value: { index: 5, YAHL7::V2::DataType::FT }
                              units: 6,
                              reference_range: 7,
                              abnormal_flags: 8,
@@ -29,10 +28,6 @@ module YAHL7
                              equipment_instance_identifier: 18,
                              analysis_datetime: { index: 19, class: YAHL7::V2::DataType::TS }
                            })
-
-        def observation_value
-          self[5]
-        end
       end
     end
   end

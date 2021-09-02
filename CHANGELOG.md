@@ -18,6 +18,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - The `ORU` message type now has an `#observations_and_notes` method, which
   returns all `OBX` and `NTE` segments in order for that message. This is useful
   for building a complete report of test results for applicable messages.
+- Utilize `FT` data type for `OBX.5` for now. This could be various data types,
+  so I will need to figure out a more appropriate way to handle this.
 
 ### Changed
 
