@@ -19,7 +19,7 @@ module YAHL7
       def initialize(src)
         case src
         when ::String then @scanner = YAHL7::V2::Scanner::String.new(src)
-        when ::IO, ::File, ::StringIO then @scanner = YAHL7::V2::Scanner::IO.new(src)
+        when ::IO, ::File, ::StringIO, ::Tempfile then @scanner = YAHL7::V2::Scanner::IO.new(src)
         else raise 'Unknown source type'
         end
       end
