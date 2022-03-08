@@ -14,6 +14,7 @@ module YAHL7
           @source = src
           @message_regexp = /#{MSG_HEADER}\|/
           @buffer = StringIO.new
+          @first = true
         end
 
         def each
@@ -33,31 +34,20 @@ module YAHL7
 
         private
 
-        def read_message
-          msg = @buffer.string
-          @buffer = StringIO.new
-          msg
-        end
-
+        # The way we scan a "line" is by looking for the next instance of MSH.
         def scan_line
-          line = @source.readline(YAHL7::V2::SEGMENT_SEP)
-          "#{line.strip}\r"
+          line = @source.readline('MSH').delete_suffix('MSH')
+          "MSH#{line.strip}\r"
         end
 
         def scan_message
-          loop do
-            return read_message if @source.eof?
-
-            line = scan_line
-
-            if line[0..2] == MSG_HEADER && @buffer.length.positive?
-              msg = read_message
-              @buffer.write(line)
-              return msg
-            end
-
-            @buffer.write(line)
+          if @first
+            @source.readline('MSH')
+            @first = false
           end
+
+          msg = @source.readline('MSH').delete_suffix('MSH')
+          "MSH#{msg.strip}"
         end
       end
     end
