@@ -36,8 +36,8 @@ module YAHL7
 
         # The way we scan a "line" is by looking for the next instance of MSH.
         def scan_line
-          line = @source.readline('MSH').delete_suffix('MSH')
-          "MSH#{line.strip}\r"
+          line = @source.readline('MSH|^~').delete_suffix('MSH|^~')
+          "MSH|^~#{line.strip}\r"
         end
 
         def scan_message

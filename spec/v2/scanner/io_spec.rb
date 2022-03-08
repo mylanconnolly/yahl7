@@ -2,7 +2,7 @@
 
 RSpec.describe YAHL7::V2::Scanner::IO do
   let(:scanner) { described_class.new(input) }
-  let(:messages) { %w[MSH|. MSH|.. MSH|...] }
+  let(:messages) { %w[MSH|^~. MSH|^~.. MSH|^~...] }
 
   describe '#each' do
     context 'when messages are separated by return' do
