@@ -13,6 +13,7 @@ module YAHL7
         @parse_options = parse_options || ParseOptions.from_body(body)
 
         @segments = body
+                    .strip
                     .split(parse_options.segment_sep)
                     .map { |s| Segment.parse(s, parse_options) }
       end

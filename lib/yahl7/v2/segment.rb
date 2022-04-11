@@ -19,7 +19,7 @@ module YAHL7
       attr_accessor :body, :parts, :field_parser, :parse_options
 
       def initialize(body, parse_options)
-        @body = body
+        @body = body.strip
         @parts = @body.split(parse_options.repetition_sep)
         @parsed = Array.new(@parts.count)
         @field_parser = FieldParser.new(parse_options)
